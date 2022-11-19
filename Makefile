@@ -1,6 +1,5 @@
-### If you wish to use extra libraries (math.h for instance),
-### add their flags here (-lm in our case) in the "LIBS" variable.
 
+### Extra libs go here vvv (e.g. math.h)
 LIBS = -lm
 
 ###
