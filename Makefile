@@ -4,6 +4,7 @@
 LIBS = -lm
 
 ###
+CC      = gcc
 CFLAGS  = -std=c99
 CFLAGS += -g
 CFLAGS += -Wall
