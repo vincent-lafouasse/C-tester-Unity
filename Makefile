@@ -26,3 +26,4 @@ clean:
 tests.out: ./*.c ./*.h
 	@echo Compiling $@
 	$(CC) $(CFLAGS) $(TEST_FRAMEWORK) ./*.c -o tests.out $(LIBS)
+	@echo
