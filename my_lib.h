@@ -1,2 +1,1 @@
-int get_42(void);
-
+int	get_42(void);

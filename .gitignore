@@ -1,4 +1,5 @@
-**/**.out
-**/**.out.DYSM/
-**/**.o
+**/*.out
+**/**.out.dSYM/
+**/*.o
+.DS_Store
 
