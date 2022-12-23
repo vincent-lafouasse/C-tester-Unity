@@ -2,11 +2,7 @@
 
 ## What is this?
 
-A basic `C` sandbox with TDD in mind.
-
-## Todo
-
-[] Handle standard output so test print statements.
+A basic `C` sandbox to test your code
 
 
 ## Useful links
