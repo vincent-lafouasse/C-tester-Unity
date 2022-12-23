@@ -1,9 +1,15 @@
+EXEC = tests.out
+
+BUILD_DIR = ./build
+SRC_DIR = ./src
+
+SRCS := $(shell find $(SRC_DIR) -name '*.c')
+OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 ### Extra libs go here vvv (e.g. math.h)
 LIBS = -lm
 
 ###
-CC      = gcc
 CFLAGS  = -std=c99
 CFLAGS += -g
 CFLAGS += -Wall
@@ -12,17 +18,20 @@ CFLAGS += -pedantic
 CFLAGS += -Werror
 CFLAGS += -Wmissing-declarations
 CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
-TEST_FRAMEWORK = test-framework/unity.c
 
 .PHONY: test
-test: tests.out ./*.c ./*.h
-	@./tests.out
+test: $(BUILD_DIR)/$(EXEC)
+	./$<
+
+# Linking
+$(BUILD_DIR)/$(EXEC): $(OBJS)
+	$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
+
+# Compile C 
+$(BUILD_DIR)/%.c.o: %.c
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	rm -rf *.o *.out *.out.dSYM
-
-tests.out: ./*.c ./*.h
-	@echo Compiling $@
-	$(CC) $(CFLAGS) $(TEST_FRAMEWORK) ./*.c -o tests.out $(LIBS)
-	@echo
+	$(RM) -r $(BUILD_DIR)
