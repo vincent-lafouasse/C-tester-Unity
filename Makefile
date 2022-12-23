@@ -19,9 +19,16 @@ CFLAGS += -Werror
 CFLAGS += -Wmissing-declarations
 CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 
+LINE = --------------------------------------------------------------------------------
+
 .PHONY: test
 test: $(BUILD_DIR)/$(EXEC)
-	./$<
+	@echo
+	@echo $(LINE)
+	@echo TEST OUTPUT
+	@echo $(LINE)
+	@echo
+	@./$<
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
