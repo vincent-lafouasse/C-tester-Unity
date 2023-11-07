@@ -1,43 +1,82 @@
-EXEC = tests.out
+LIB = libcustom.a
 
+CC = clang
+
+SRC_DIR   = ./src
+INC_DIR   = ./include
 BUILD_DIR = ./build
-SRC_DIR = ./src
 
-SRCS := $(shell find $(SRC_DIR) -name '*.c')
-OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
+H_FILES = $(shell find $(INC_DIR) -name '*.h')
 
-### Extra libs go here vvv (e.g. math.h)
-LIBS = -lm
+C_FILES = $(shell find $(SRC_DIR) -name '*.c')
+OBJS := $(C_FILES:%=$(BUILD_DIR)/%.o)
 
-###
-CFLAGS  = -std=c99
-CFLAGS += -g
-CFLAGS += -Wall
-CFLAGS += -Wextra
-CFLAGS += -pedantic
-CFLAGS += -Werror
-CFLAGS += -Wmissing-declarations
-CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
+CFLAGS  = -Wall -Wextra
+#CFLAGS += -Werror
+CFLAGS += -I$(INC_DIR) 
 
+.PHONY: all
+all: build
 
-.PHONY: test
-test: $(BUILD_DIR)/$(EXEC)
-	@echo
-	@python -c 'print("-" * 80)'
-	@echo TEST OUTPUT
-	@python -c 'print("-" * 80)'
-	@echo
-	@./$<
+.PHONY: build
+build: $(LIB)
 
-# Linking
-$(BUILD_DIR)/$(EXEC): $(OBJS)
-	$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
+$(LIB): $(OBJS) $(H_FILES)
+	@echo Building lib
+	@ar rcs $(LIB) $(OBJS)
 
-# Compile C 
-$(BUILD_DIR)/%.c.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(BUILD_DIR)/%.c.o: %.c $(H_FILES)
+	@echo Compiling $<
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	$(RM) -r $(BUILD_DIR)
+	@echo Cleaning up object files
+	@rm -rf $(BUILD_DIR)
+
+.PHONY: fclean
+fclean: clean
+	@echo Cleaning up lib
+	@rm -rf $(LIB)
+
+.PHONY: re
+re: fclean $(LIB)
+
+.PHONY: test
+test: $(LIB)
+	@make -C test
+
+.PHONY: fmt
+fmt:
+	@echo Formatting
+	@bash aux/norme.sh
+
+.PHONY: check
+check: re
+	@cppcheck --language=c $(C_FILES)
+	@cppcheck --language=c $(LIB_H)
+	@echo
+	@python3 -c 'print("-" * 80)'
+	@echo SAINTE NORMINETTE SOIS CLEMENTE
+	@python3 -c 'print("-" * 80)'
+	@echo
+	@norminette $(C_FILES)
+	@echo
+	@norminette $(LIB_H)
+
+# LSP stuff, don't worry about it
+.PHONY: update
+update:
+	make clean
+	mkdir -p $(BUILD_DIR)
+	bear --output $(BUILD_DIR)/compile_commands.json -- make build
+
+# aliases
+.PHONY: b f c u t
+b: build
+f: fmt
+c: clean
+u: update
+t: test
+
