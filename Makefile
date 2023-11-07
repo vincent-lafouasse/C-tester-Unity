@@ -55,7 +55,7 @@ fmt:
 .PHONY: check
 check: re
 	@cppcheck --language=c $(C_FILES)
-	@cppcheck --language=c $(LIB_H)
+	@cppcheck --language=c $(H_FILES)
 	@echo
 	@python3 -c 'print("-" * 80)'
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
@@ -63,7 +63,7 @@ check: re
 	@echo
 	@norminette $(C_FILES)
 	@echo
-	@norminette $(LIB_H)
+	@norminette $(H_FILES)
 
 # LSP stuff, don't worry about it
 .PHONY: update
