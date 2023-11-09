@@ -19,7 +19,7 @@ static void	test_42(void)
 
 int	main(void)
 {
-	UnityBegin("test.c");
+	UnityBegin("MyTestModule");
 	RUN_TEST(test_42);
 	return (UnityEnd());
 }
