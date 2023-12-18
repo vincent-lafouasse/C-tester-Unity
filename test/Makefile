@@ -22,7 +22,7 @@ CFLAGS += $(INC_FLAGS)
 
 .PHONY: test
 test: $(BUILD_DIR)/$(EXEC)
-	@./$<
+	@./$< -v
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
