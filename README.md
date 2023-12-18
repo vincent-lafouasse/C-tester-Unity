@@ -19,7 +19,7 @@ A basic `C` sandbox to test your code using the Unity Framework
 
 A book by James W. Grenning covering TDD in C using the Unity framework. You can find it [here](https://books-library.net/files/books-library.net-07281709Ee1R6.pdf)
 
-The whole book is good but there is a quick tutorial in _Appendix B Unity Quick Reference_
+The whole book is good but there is a quick tutorial in _Appendix B Unity Quick Reference_ page 327
 
 ## License
 ```
