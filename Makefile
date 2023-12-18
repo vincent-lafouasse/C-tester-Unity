@@ -47,24 +47,6 @@ re: fclean $(LIB)
 test: $(LIB)
 	@make -C test
 
-.PHONY: fmt
-fmt:
-	@echo Formatting
-	@bash aux/norme.sh
-
-.PHONY: check
-check: re
-	@cppcheck --language=c $(C_FILES)
-	@cppcheck --language=c $(H_FILES)
-	@echo
-	@python3 -c 'print("-" * 80)'
-	@echo SAINTE NORMINETTE SOIS CLEMENTE
-	@python3 -c 'print("-" * 80)'
-	@echo
-	@norminette $(C_FILES)
-	@echo
-	@norminette $(H_FILES)
-
 # LSP stuff, don't worry about it
 .PHONY: update
 update:
@@ -75,7 +57,6 @@ update:
 # aliases
 .PHONY: b f c u t
 b: build
-f: fmt
 c: clean
 u: update
 t: test
