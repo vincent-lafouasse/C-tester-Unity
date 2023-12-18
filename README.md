@@ -17,7 +17,7 @@ A basic `C` sandbox to test your code using the Unity Framework
 
 ### Test Driven Development for Embedded C
 
-A book by James W. Grenning covering TDD in C using the Unity framework. You can find it here (https://books-library.net/files/books-library.net-07281709Ee1R6.pdf)
+A book by James W. Grenning covering TDD in C using the Unity framework. You can find it [here](https://books-library.net/files/books-library.net-07281709Ee1R6.pdf)
 
 The whole book is good but there is a quick tutorial in _Appendix B Unity Quick Reference_
 
