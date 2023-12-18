@@ -3,11 +3,11 @@ LIB = unity.a
 CC = clang
 
 SRC_DIR    = ./src
-INC_DIRS   = ./include ./src
+INC_DIRS   = ./include
 BUILD_DIR  = ./build
 
 HEADERS  = include/unity.h include/unity_fixture.h include/unity_memory.h
-HEADERS += src/unity_fixture_internals.h src/unity_internals.h
+HEADERS += include/unity_fixture_internals.h include/unity_internals.h
 
 SRCS = src/unity.c src/unity_fixture.c src/unity_memory.c
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
