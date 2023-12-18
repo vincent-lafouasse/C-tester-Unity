@@ -1,25 +1,14 @@
 #include "my_lib.h"
 #include "unity.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "unity_fixture.h"
 
-void	setUp(void)
+static void runAllTests()
 {
+    RUN_TEST_GROUP(Module);
 }
 
-void	tearDown(void)
+int main(int ac, const char** av)
 {
-}
-
-static void	test_42(void)
-{
-	TEST_ASSERT_EQUAL_INT(42, get_42());
-}
-
-int	main(void)
-{
-	UnityBegin("MyTestModule");
-	RUN_TEST(test_42);
-	return (UnityEnd());
+    UnityBegin("My lib");
+    return (UnityMain(ac, av, runAllTests));
 }
