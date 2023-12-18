@@ -11,9 +11,9 @@ A basic `C` sandbox to test your code using the Unity Framework
 ## Useful links
 
 ### Official documentation
-- (Get started guide)[github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md]
+- [Get started guide](github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md)
 
-- (Assertion cheat sheet)https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityAssertionsCheatSheetSuitableforPrintingandPossiblyFraming.pdf
+- [Assertion cheat sheet](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityAssertionsCheatSheetSuitableforPrintingandPossiblyFraming.pdf)
 
 ## License
 ```
