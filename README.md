@@ -1,4 +1,4 @@
-# A title
+# C testing template using the Unity Framework
 
 ## What is this?
 
