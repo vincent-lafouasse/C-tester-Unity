@@ -1,4 +1,4 @@
-LIB = unity.a
+LIB = libunity.a
 
 CC = clang
 
