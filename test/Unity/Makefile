@@ -16,6 +16,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CFLAGS  = -Wall -Wextra
 #CFLAGS += -Werror
+CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 CFLAGS += $(INC_FLAGS)
 
 .PHONY: all
