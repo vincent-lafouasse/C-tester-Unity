@@ -12,7 +12,7 @@ A basic `C` sandbox to test your code using the Unity Framework
 
 ### Official documentation
 - [Get started guide](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityGettingStartedGuide.md)
-
+- [Unity Assertions Reference](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityAssertionsReference.md)
 - [Assertion cheat sheet](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityAssertionsCheatSheetSuitableforPrintingandPossiblyFraming.pdf)
 
 ### Test Driven Development for Embedded C
