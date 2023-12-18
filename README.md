@@ -15,6 +15,12 @@ A basic `C` sandbox to test your code using the Unity Framework
 
 - [Assertion cheat sheet](https://github.com/ThrowTheSwitch/Unity/blob/master/docs/UnityAssertionsCheatSheetSuitableforPrintingandPossiblyFraming.pdf)
 
+### Test Driven Development for Embedded C
+
+A book by James W. Grenning covering TDD in C using the Unity framework. You can find it here (https://books-library.net/files/books-library.net-07281709Ee1R6.pdf)
+
+The whole book is good but there is a quick tutorial in _Appendix B Unity Quick Reference_
+
 ## License
 ```
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
