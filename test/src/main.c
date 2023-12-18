@@ -1,5 +1,5 @@
 #include "my_lib.h"
-#include "test-framework/unity.h"
+#include "unity.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

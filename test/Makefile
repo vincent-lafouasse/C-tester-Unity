@@ -6,10 +6,10 @@ SRC_DIR = ./src
 SRCS := $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
-LIBS = -lcustom
-LDFLAGS = -L..
+LIBS = -lcustom -lunity
+LDFLAGS = -L.. -LUnity
 
-INC_DIRS = ./src/test-framework .. ./src ../include
+INC_DIRS = ./src ../include ./Unity/include
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 ###
@@ -18,8 +18,6 @@ CFLAGS += -g
 CFLAGS += -Wall -Wextra
 #CFLAGS += -Werror
 CFLAGS += $(INC_FLAGS)
-
-CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 
 
 .PHONY: test
