@@ -26,6 +26,8 @@ test: $(BUILD_DIR)/$(EXEC)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
+	make libcustom.a -C ..
+	make libunity.a -C Unity
 	$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
 
 # Compile C 
