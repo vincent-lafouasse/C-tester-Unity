@@ -1,8 +1,8 @@
-# C testing template using the Unity Framework
+# C testing template
 
 ## What is this?
 
-A basic `C` sandbox to test your code
+A basic `C` sandbox to test your code using the Unity Framework
 
 ## TODO
 
