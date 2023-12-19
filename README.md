@@ -1,5 +1,7 @@
 # C testing template
 
+![test status](https://github.com/vincent-lafouasse/C-tester-Unity/actions/workflows/run_tests.yml/badge.svg)
+
 ## What is this?
 
 A basic `C` sandbox to test your code using the Unity Framework
