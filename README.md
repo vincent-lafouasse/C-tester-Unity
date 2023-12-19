@@ -1,4 +1,5 @@
 # C testing template
+
 ![test status](https://github.com/vincent-lafouasse/C-tester-Unity/actions/workflows/run_tests.yml/badge.svg)
 
 ## What is this?
